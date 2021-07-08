@@ -1,0 +1,93 @@
+define :rock do |kick, snare, hihat|
+  in_thread do
+    2.times do
+      sample kick
+      sleep 1
+      sample snare
+      sleep 1
+    end
+  end
+  4.times do
+    sample hihat, amp: 0.66
+    sleep 0.5
+    sample hihat, amp: 0.33
+    sleep 0.5
+  end
+end
+
+define :funk do |kick, snare, hihat|
+  in_thread do
+    sample kick
+    sleep 1
+    sample snare
+    sleep 0.75
+    sample kick, amp: 0.72
+    sleep 0.25
+    sample kick
+    sleep 0.5
+    sample kick, amp: 0.72
+    sleep 0.5
+    sample snare
+    sleep 1
+  end
+  4.times do
+    sample hihat, amp: 0.66
+    sleep 0.5
+    sample hihat, amp: 0.33
+    sleep 0.5
+  end
+end
+
+define :blues do |kick, snare, hihat|
+  in_thread do
+    2.times do
+      sample kick
+      sleep 1
+      sample snare
+      sleep 1
+    end
+  end
+  4.times do
+    sample hihat, amp: 0.5
+    sleep 0.67
+    sample hihat, amp: 0.25
+    sleep 0.33
+  end
+end
+
+define :country do |kick, snare, hihat|
+  in_thread do
+    2.times do
+      sample kick
+      sleep 1
+      sample snare, amp: 0.5
+      sleep 1
+    end
+  end  
+  2.times do
+    sample hihat, amp: 0.5
+    sleep 1
+    2.times do
+      sample hihat, amp: 0.25
+      sleep 0.5
+    end
+  end
+end
+
+define :raggae do |kick, snare, hihat|
+  in_thread do
+    2.times do
+      sample kick
+      sleep 1
+      sample snare
+      sleep 1
+    end
+  end
+  sleep 0.5
+  3.times do
+    sample hihat, amp: 0.25
+    sleep 1
+  end
+  sample hihat, amp: 0.25
+  sleep 0.5
+end
